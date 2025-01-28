@@ -3,6 +3,7 @@
 
     /**
      * - "==" (égalité)
+     * - "===" (égalité strict)
      * - "!=" (inégalité)
      * - ">" (plus grand)
      * - ">=" (plus grand ou égal)
