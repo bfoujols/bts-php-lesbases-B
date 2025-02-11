@@ -1,19 +1,5 @@
 <?php
 
-// constante est une variable static
-const genreRef = [
-    1 => "Female",
-    2 => "Male",
-    3 => "UniSexe"
-];
-
-const colorRef = [
-    0 => "No color",
-    1 => "White",
-    2 => "Black",
-    3 => "Grey"
-];
-
 class cat
 {
     public string $name;
@@ -62,12 +48,3 @@ class cat
         }
     }
 }
-
-$felix = new cat("Félix", 2, 2);
-// acces public
-$felix->name = "Félixxxx";
-// acces privée via setter
-//$felix->setGenre(1);
-echo $felix->getColor();
-
-//var_dump($felix);
