@@ -1,8 +1,10 @@
 <?php
 
+include ("Production.php");
 include ("Film.php");
 include ("Realisateur.php");
 include ("Acteur.php");
+include ("Investisseur.php");
 
 echo "TP Cinema \n";
 
@@ -20,21 +22,30 @@ $PattinsonRobert = new Acteur("Pattinson", "Robert", true);
 $KravitzZoe = new Acteur("Kravitz", "Zoe");
 $DanoPaul = new Acteur("Dano", "Paul");
 
+$canalPlus = new Investisseur("Canal+", 200);
+$tf1 = new Investisseur("TF1", 15);
+$arte = new Investisseur("Arte", 6);
+
 $film[1] = new Film(1, "Bac Nord", 563921, $real1);
 $film[1]->setNbEntree(789345);
 $film[1]->ajouterActeurs($GilleLellouche);
 $film[1]->ajouterActeurs($FrancoisCivil);
 $film[1]->ajouterActeurs($LeklouKarim);
+$film[1]->ajouterInvestisseur($canalPlus);
+$film[1]->ajouterInvestisseur($arte);
 
 $film[2] = new Film(2, "Boite noire", 432789, $real2);
 $film[2]->ajouterActeurs($NineyPierre);
 $film[2]->ajouterActeurs($DeLaageLou);
 $film[2]->ajouterActeurs($DussolierAndre);
+$film[2]->ajouterInvestisseur($arte);
+$film[2]->ajouterInvestisseur($tf1);
 
 $film[3] = new Film(3, "The batman", 879214, $real3);
 $film[3]->ajouterActeurs($PattinsonRobert);
 $film[3]->ajouterActeurs($KravitzZoe);
 $film[3]->ajouterActeurs($DanoPaul);
+$film[3]->ajouterInvestisseur($canalPlus);
 
 $film[4] = new film(4, "test", 4554);
 
@@ -52,5 +63,9 @@ foreach ($film as $leFilm) {
 //    foreach ($leFilm->getLesActeurs() as $unActeur) {
 //        echo $unActeur->getNomActeur() . " - " . $unActeur->getPrenomActeur() . " - " . $unActeur->getEstCesar() . "\n";
 //    }
+    echo "Liste des investisseurs :\n";
+    foreach ($leFilm->getInvestisseur() as $leInvestisseur) {
+        echo $leInvestisseur->getNom() . "\n";
+    }
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-class Film
+class Film extends Production
 {
     private int $idFilm;
     private string $nomFilm;
